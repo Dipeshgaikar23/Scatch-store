@@ -5,4 +5,8 @@ router.get('/',(req, res)=>{
     res.send('hey')
 })
 
+router.get('/create',(req, res)=>{
+    res.send('huihuihui')
+})
+
 module.exports = router;
