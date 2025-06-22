@@ -10,6 +10,6 @@ router.post('/register', registerUser)
 
 router.post('/login', userLogin)
 
-router.get('/logout', logout)
+// router.get('/logout', logout)
 
 module.exports = router;

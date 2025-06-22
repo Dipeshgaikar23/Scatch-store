@@ -1,0 +1,12 @@
+get
+/shop - for shop page
+/ - register, login page
+/cart - for cart page
+/addtocart/product._id - adds product in cart
+
+/logout - logs you out
+
+
+/owners/admin - creates a new product
+post
+/products/create - creates a new product

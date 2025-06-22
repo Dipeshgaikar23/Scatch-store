@@ -2,6 +2,7 @@ const userModel = require('../models/user-model')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const { generateToken } = require('../utils/generateToken')
+const productModel = require('../models/product-model')
 
 
 module.exports.registerUser = async (req, res) => {
@@ -52,11 +53,11 @@ module.exports.userLogin = async (req, res) => {
         return res.redirect('/')
     }
 
-    bcrypt.compare(password, user.password, (err, result) => {
+    bcrypt.compare(password, user.password, async (err, result) => {
         if (result) {
             let token = generateToken(user)
             res.cookie('token', token)
-            res.render('shop')
+            res.redirect('/shop',)
         } else {
             req.flash('error', 'Credentials does not match')
             return res.redirect('/')
@@ -64,7 +65,3 @@ module.exports.userLogin = async (req, res) => {
     })
 }
 
-module.exports.logout = (req, res) => {
-    res.cookie("token", '')
-    res.redirect('/')
-}
