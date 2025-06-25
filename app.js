@@ -33,6 +33,8 @@ app.use('/', index)
 app.use('/owners', ownerRouter)
 app.use('/users', userRouter)
 app.use('/products', productRouter)
+app.use(express.static('public'));
+
 
 app.listen(port, () => {
     console.log(`Example app listening on port localhost:${port}`)

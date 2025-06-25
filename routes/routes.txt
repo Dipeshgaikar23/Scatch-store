@@ -7,6 +7,6 @@ get
 /logout - logs you out
 
 
-/owners/admin - creates a new product
+/owners/dashboard - creates a new product
 post
 /products/create - creates a new product
